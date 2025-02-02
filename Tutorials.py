@@ -440,3 +440,59 @@ for i in range(6, 0, -1):
 # 32. Advanced print method
 message = input("enter a message: ")
 print("Hello", message)
+
+
+
+# FILE HANDLING
+# 1. Open the File on the Server
+f=open("Books-Exercise\\demo.txt","r")
+print(f.read())
+
+# 2. Read Only Parts of the File
+f=open("Books-Exercise\\demo.txt","r")
+print(f.read(7))
+
+# 3. Read Lines
+f=open("Books-Exercise\\demo.txt","r")
+print(f.readline())
+print(f.readline())
+print(f.readline())
+
+# 4. Read All the Lines
+f=open("Books-Exercise\\demo.txt","r")
+print(f.readlines())
+
+# 5. Close The file
+f=open("Books-Exercise\\demo.txt","r")
+print(f.readlines())
+f.close()
+
+# 6. Write to an Existing File
+f=open("Books-Exercise\\demo.txt","a")
+f.write("\nNow the file has more content!")
+f.close()
+
+
+f=open("Books-Exercise\\demo.txt","r")
+print(f.read())
+
+# 7. overwrite the content
+f=open("Books-Exercise\\demo.txt","w")
+f.write("Woops! I have deleted the content!")
+f.close()
+
+
+f=open("Books-Exercise\\demo.txt","r")
+print(f.read())
+
+
+# 8. Delete a File
+import os
+os.remove("demofile.txt")
+
+# 9. Check if File exist
+import os
+if os.path.exists("demofile.txt"):
+    of.remove("demofile.txt")
+else:
+    print("The File does not exist")
