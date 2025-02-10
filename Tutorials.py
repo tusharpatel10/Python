@@ -479,12 +479,19 @@ for i in range(len(list)):
         print(list[i], end=" ")
 
 
-# * Pattern
+""" ****** Pattern ****** """
+# 1.
 for i in range(6, 0, -1):
     for j in range(i, 0, -1):
         print("*", end=" ")
     print()
 
+# 2.
+n = 5
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print("*", end=" ")
+    print()
 
 # 33. Advanced print method
 message = input("enter a message: ")
@@ -802,3 +809,39 @@ d1 = {"a": 100, "b": 200, "c": 300}
 d2 = {"a": 100, "b": 200, "d": 400}
 new_dict = Counter(d1) + Counter(d2)
 print(new_dict)
+
+
+""" 7 & 8 FEB Questions """
+# 1. Print the current data and time in a formatted.
+# (Year-Month-Day Hour : Minute)
+import datetime
+
+now = datetime.datetime.now()
+print("Current Date and time: ")
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+
+# 2. Create a dictionary with the roll number and percentage of 10 students write a program to print only those Roll number from the dictionary whose percentage is greater than 50.
+students = {}
+for i in range(3):
+    roll_no = int(input())
+    percentage = float(input())
+    students[roll_no] = percentage
+print("\nRoll numbers with percentage greate than 50 :")
+for roll_no, percentage in students.items():
+    if percentage > 50:
+        print(roll_no)
+
+
+# 3. Write a program that print only the element in the lower triagnle part of a square matrix a given below.Do not include the diogonal in lower triangle...abs
+""" 1 0 0 0
+2 3 0 0
+4 5 6 0
+7 8 9 10 """
+
+matrix = [[1, 0, 0, 0], [2, 3, 0, 0], [4, 5, 6, 0], [7, 8, 9, 10]]
+n = len(matrix)
+print("Elements in the lower triagnle (Excluding diogram):")
+for i in range(n):
+    for j in range(i):
+        print(matrix[i][j], end=" ")
+    print()
