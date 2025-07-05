@@ -169,13 +169,22 @@ print(rev_list)
 list = [10, 11, 12, 13, 14, 15]
 print(list)
 
-# Method - 1
+# Method - 1 this reverse function only worked on list
 list.reverse()
 print(list)
 
 
 # Method - 2
 print(list[::4])
+
+
+# Reverse Method in function with string
+def my_fun(x):
+    return x[::-1]
+
+
+mytext = my_fun("I wonder how this text looks like backwards")
+print(mytext)
 
 
 # 13. write a python program to solve.
@@ -531,6 +540,17 @@ else:
         print(recur_fibo(i), end=" ")
 
 
+# Method 2
+num = 10
+n1, n2 = 0, 1
+print(n1, n2, end=" ")
+for i in range(2, num):
+    n3 = n1 + n2
+    n1 = n2
+    n2 = n3
+    print(n3, end=" ")
+
+
 # 37. Write a python program to given string in a new string no duplicate consecutive latters.
 # input: Pythhonn  Output: Python
 def remove_dup(input_string):
@@ -669,7 +689,7 @@ def read_and_count():
                 lower_case += 1
             if j[i].isupper():
                 uper_case += 1
-            if k[i] == " ":
+            if j[i] == " ":
                 space += 1
         string_count += j.lower().count("hello")
     print("Alphabets : ", alphabets)
@@ -776,7 +796,7 @@ os.remove("demofile.txt")
 import os
 
 if os.path.exists("demofile.txt"):
-    of.remove("demofile.txt")
+    os.remove("demofile.txt")
 else:
     print("The File does not exist")
 
