@@ -865,3 +865,66 @@ for i in range(n):
     for j in range(i):
         print(matrix[i][j], end=" ")
     print()
+
+
+# July 2025
+# 1. Write a Python to combine two dictionary adding values for common keys.
+d1 = {"a": 100, "b": 200, "c": 300}
+d2 = {"a": 300, "b": 200, "d": 400}
+d3 = {}
+for key in set(d1) | set(d2):
+    d3[key] = d1.get(key, 0) + d2.get(key, 0)
+
+print(d3)
+
+
+# 2. Write a program to replace 'a' with 'b','b' with 'c',...,'z' with 'a' and similarly for 'A' with 'B','B' with 'C',...'Z' with 'A' in a file. The other characters should remain unchanged.
+
+# With File
+text = open("input.text").read()
+result = ""
+for c in text:
+    if c >= "a" and c <= "z":
+        result += "a" if c == "z" else chr(ord(c) + 1)
+    elif c >= "A" and c <= "Z":
+        result += "A" if c == "Z" else chr(ord(c) + 1)
+    else:
+        result += c
+open("output.txt", "w").write(result)
+
+
+# Without File Solution
+text = "a b c d A B C D"
+result = ""
+for c in text:
+    if c >= "a" and c <= "z":
+        result += "a" if c == "z" else chr(ord(c) + 1)
+    elif c >= "A" and c <= "Z":
+        result += "A" if c == "Z" else chr(ord(c) + 1)
+    else:
+        result += c
+print(result)
+
+
+# 3. Write a program to compute the wages of a daily laborer as per the following rules :- Hours Worked Rate Applicable Upto first 8 hrs Rs.100/-
+#       a For next 4 hrs Rs. 30/- per hrs extra
+#       b For next 4 hrs Rs. 40/- per hrs extra
+#       c For next 4 hrs Rs. 50/- per hrs extra
+#       d For rest Rs. 60/- per hrs extra
+
+h = int(input())
+w = 0
+if h > 20:
+    w += (h - 20) * 60
+    h = 20
+if h > 16:
+    w += (h - 16) * 50
+    h = 16
+if h > 12:
+    w += (h - 12) * 40
+    h = 12
+if h > 8:
+    w += (h - 8) * 30
+    h = 8
+w += h * 100
+print("Wages : Rs.", w)
