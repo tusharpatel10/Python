@@ -90,6 +90,7 @@ else:
 
 # 6. Python program to find number of days between two given dates
 
+# Method 1
 from datetime import date as date_n
 
 
@@ -105,6 +106,12 @@ print(
     "days\n",
 )
 
+# Method 2
+from datetime import date
+
+date1 = date(2024, 12, 10)
+date2 = date(2025, 8, 10)
+print("The Number of days between the given Data are", (date2 - date1))
 
 # 7. Write a program to input two numbers as input and compute the greatest common divisor(GCD).
 # Method 1
