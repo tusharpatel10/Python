@@ -935,3 +935,233 @@ if h > 8:
     h = 8
 w += h * 100
 print("Wages : Rs.", w)
+
+
+# 18-08-2025
+# 1. Calculate Area of triangle by user input base & height in Python.
+b = float(input())
+h = float(input())
+area = (b * h) / 2
+print("The area of the triangle is: ", area)
+
+
+# 2. String program to count words in given string and return it in the dictionary format with no of occurrence of words.
+str = input("Enter String: ")
+l = []
+l = str.split()
+wordfreq = [l.count(p) for p in l]
+print(dict(zip(l, wordfreq)))
+
+
+# 3. Create a 3x3 array with values from 1 to 9. Extract the second row, the second column, and a 2x2 sub array from the bottom-right corner.
+import numpy as np
+
+arr = np.arange(1, 10).reshape(3, 3)
+print("Original Array: \n", arr)
+second_row = arr[1, :]
+print("Second Row: \n", second_row)
+second_col = arr[:, 1]
+print("Second Col: \n", second_col)
+sub_array = arr[1:3, 1:3]
+print("2x2 Sub-Array from bottom-right corner: \n", sub_array)
+
+
+# 4. Given a list, dictionary, and a key K, print the value of K from the dictionary if the key is present in both, the list and the dictionary.
+test_list = ["Power", "is", "Good", "for", "PowerX"]
+test_dic = {"Power": 5, "Good": 6}
+k = "Power"
+if k in test_list and k in test_dic:
+    print(test_dic[k])
+else:
+    print("Key is not found both")
+
+
+# 5. Write a program to store the length of all sub tuples of a tuple into a new tuple. For example:
+# T1=((1,2,3),(3,4),(2,3,4,5),(5,6,7))
+# T2=(3,2,4,3)
+
+T1 = ((1, 2, 3), (3, 4), (2, 3, 4, 5), (5, 6, 7))
+T2 = (3, 2, 4, 3)
+print("Original Tuple: ", T1)
+print("New Tuple with length: ", T2)
+
+# 6. Write a program to find the sum of prime number within 1 to 10
+lower = 1
+upper = 10
+sum = 0
+for num in range(lower, upper + 1):
+    if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            sum = sum + num
+print(f"Sum of Prime number between {lower} and {upper} are: ", sum)
+
+
+# 7. Create an array original from [5,10,15,20]. Make a copy of this array and modify the second element of the copy to 50. Print both the original and the modified copy to see if the original array is unchanged.
+import numpy as np
+
+original = np.array([5, 10, 15, 20])
+copy_array = original.copy()
+copy_array[1] = 50
+print("Original Array : ", original)
+print("Modified Array : ", copy_array)
+
+
+# 8. Write a program that takes two integers as input and performs the following bitwise operations.
+# (A) And
+# (B) Or
+# (C) XOR
+# (D) Left shift (by 2)
+# (E) Right shift (by 2)
+
+a = 5
+b = 7
+print(f"And (a & b) : {a & b}")
+print(f"And (a | b) : {a | b}")
+print(f"And (a ^ b) : {a ^ b}")
+print(f"And (a << 2) : {a << 2}")
+print(f"And (b << 2) : {b << 2}")
+print(f"And (a >> 2) : {a >> 2}")
+print(f"And (b >> 2) : {b >> 2}")
+
+# 9. WAP to take input string and find "Ruby" and replace with "Perl" and find with "Perl" to replace "Ruby".
+input_string = input("")
+str1 = input_string.replace("Ruby", "Perl")
+str2 = str1.replace("Perl", "Ruby")
+print("Modified string: ", str2)
+
+
+# 10. Write a NumPy program to create a 5x5 array with random values and replace the minimum value with 0
+import numpy as np
+
+nums = np.random.randint(1, 50, (5, 5))
+print("Original array Elements: \n", nums)
+min_val = nums.min()
+nums[nums == min_val] = 0
+print("Array after replace the minimum value with 0 :\n", nums)
+
+
+# 11. Write python program to print sum of first 100 odd numbers.
+sum_odd = 0
+for i in range(1, 201, 2):
+    sum_odd += i
+print("Sum of the first 100 odd numbers is : ", sum_odd)
+
+
+# 12. Take the input from user and check the given no is neon or not.
+# Example. input = 9
+# Square : 9*2 = 81
+# Sum of digits : 8 + 1 = 9 (Which is equal to the original number)
+num = int(input())
+sum_of_digits = sum(int(digit) for digit in str(num * 2))
+if sum_of_digits == num:
+    print("The number is a neon number")
+else:
+    print("The number is not a neon number")
+
+
+# 13. Write python program to print sum of given digits.
+num = int(input())
+sum_of_digits = sum(int(digit) for digit in str(num))
+print(sum_of_digits)
+
+# 14. Write a program that take two integers a and b as input print all the numbers between a and b (inclusive) that are divisible by both 3 and 5 if no such numbers exist, display 'No numbers found'.
+a = int(input())
+b = int(input())
+for i in range(a, b):
+    if i % 15 == 0:
+        print(i, end=" ")
+
+
+# 15. Write a python program to find palindrome in given range 200 to 400.
+# Method 1
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+
+palindroms = [num for num in range(200, 300) if is_palindrome(num)]
+print("Palindroms between 200 and 400: \n", palindroms)
+
+
+# Method 2 (is palindrom check true or false)
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+
+num = int(input())
+print(is_palindrome(num))
+
+
+# 16. String have a special charactor or not
+# Example : INPUT:db&fadfrekja& OUTPUT: String is not accepted
+# Example : INPUT:dbfadfrekja   OUTPUT: String is accepted
+string = input()
+if any(not char.isalnum() for char in string):
+    print("String is not accepted")
+else:
+    print("String is accepted")
+
+
+# 17. Write a program to calculate factorial of a number using recursion.
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+num = int(input())
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    print(f"Factorial of {num} is {factorial(num)}")
+
+
+# 18. Check if a number is positive using assert statement
+num = int(input())
+assert num > 0, "Numbers is not positive!"
+print(f"{num} is a positive number.")
+
+
+# 19. Print the current data and time in a formatted (Year-Month-Day Hour:Minute)
+import datetime
+
+now = datetime.datetime.now()
+print("Current date and time: ")
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+
+
+# 20 Write a python program to given string in a new string no duplicate consecutive letters.
+def remove_dup(input_string):
+    result = input_string[0]
+    for i in range(1, len(input_string)):
+        if input_string[i] != input_string[i - 1]:
+            result += input_string[i]
+    return result
+
+
+input_string = "Pyythonn"
+output_string = remove_dup(input_string)
+print(output_string)
+
+
+# 21. Create a dictionary with the roll number and percentage of 10 students write a program to print only those Roll Numbers from the dictionary whose percentage is greater than 50.
+students = {}
+for i in range(3):
+    roll_no = int(input())
+    percentage = float(input())
+    students[roll_no] = percentage
+print("Roll Numbers with percentage greater than 50: ")
+for roll_no, percentage in students.items():
+    if percentage > 50:
+        print(roll_no)
+
+
+# 22. Pattern
+n = 5
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print(i, end=" ")
+    print()
