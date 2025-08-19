@@ -1165,3 +1165,67 @@ for i in range(1, n + 1):
     for j in range(1, i + 1):
         print(i, end=" ")
     print()
+
+
+# 19-08-2025 Paper
+# 1. Write a Function to compute the sum of n Terms of the Following series:
+# Series : X + x4 /4! + x6 /6! + x8 / 8! + ...
+# For any positive integer value of X.
+import math
+
+
+def series_sum(x, n):
+    total = x
+    power = 4
+    for i in range(2, n + 1):
+        total += (x**power) / math.factorial(power)
+        power += 2
+
+    return total
+
+
+x = int(input())
+n = 5
+print("Sum of series: ", series_sum(x, n))
+
+
+# 2. Implement Python script to accept a line of text and find the number of charactors, numbers of vowels and numbers of blank spaces in it.
+
+text = input()
+char_count = len(text)
+vowels = "aeiouAEIOU"
+vowels_count = sum(1 for ch in text if ch in vowels)
+space_count = text.count(" ")
+print("Characters: ", char_count)
+print("Vowels: ", vowels_count)
+print("Spaces: ", space_count)
+
+
+# 3. Write a python program that take as input a list having a mix 10 positive number and a key value apply linear search to find whenever the key is present in the list or not.
+# if input is [10,50,30,70,80,20,90,40],key=30
+# Then output should be
+# if input is [10,50,30,70,80,20,90,40], key =15
+# Then output should be no
+nums = [10, 50, 30, 70, 80, 20, 90, 40]
+key = int(input())
+found = False
+for n in nums:
+    if n == key:
+        found = True
+        break
+print("Yes" if found else "No")
+
+
+# 4. Write Python program to check whether a given number is a Palindrom or Not.
+num = int(input())
+rev = str(num)[::-1]
+if str(num) == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+
+# 5. Write a Python program to reverse the element of a list
+list = [10, 20, 30, 40, 50]
+print("Original list: ", list)
+print("Reversed list: ", list[::-1])
