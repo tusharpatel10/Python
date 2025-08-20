@@ -212,7 +212,7 @@ for i in range(s):
 print(f"The three value addition of {n} * {s} = {n} + {n} + {n} =", r)
 
 
-# 15. Write a Python function that takes a string as parameter and returns a string with every succesive repetitive character replaced by & e.g. Parameter become Par&met&&.
+# 15. Write a Python function that takes a string as parameter and returns a string with every succesive repetitive character replaced by & e.g. Parameter become Par&met&&. (January 2022)
 # Method-1
 st = "Parameter"
 ch = ""
@@ -1229,3 +1229,15 @@ else:
 list = [10, 20, 30, 40, 50]
 print("Original list: ", list)
 print("Reversed list: ", list[::-1])
+
+
+# January 2021
+# Write a Python program to multiply two numbers by repeated addition e.g.
+# 6*7 = 6+6+6+6+6+6+6
+a = int(input())
+b = int(input())
+c = a * b
+print(f"{a}*{b} = {a}", end="")
+for i in range(1, b):
+    print(f" + {a}", end="")
+print(f" = {c}")
