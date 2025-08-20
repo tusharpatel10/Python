@@ -23,7 +23,7 @@ print(area)
 
 
 # 2. Wrtie a python program to find the factorial of a given positive number.
-
+# IMP **********(20-August-2025)
 # Method 1
 n = int(input())
 fact = 1
@@ -1241,3 +1241,55 @@ print(f"{a}*{b} = {a}", end="")
 for i in range(1, b):
     print(f" + {a}", end="")
 print(f" = {c}")
+
+
+# 20-08-2025 Paper
+# 1. Implement Python script to Generate prime number series up to n.
+n = int(input())
+for num in range(2, n + 1):
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        print(num, end=" ")
+
+
+# 2. Create a Python program that removes even duplicate positive integer numbers (include zero) from a list and prints the unique numbers in the orders they first appeared.
+num = input()
+res = ""
+for i in num:
+    if int(i) % 2 == 0:
+        if i not in res:
+            res += i
+    else:
+        res += i
+print(res)
+
+
+# 3. Write a python program to input two numbers by command line argument and print sum ?
+import sys
+
+num1 = int(sys.argv[1])
+num2 = int(sys.argv[2])
+result = num1 + num2
+print("Sum =", result)
+
+# 4. Write a python program calculate area of triangle.
+# Area = 0.5*b*h
+b = float(input())
+h = float(input())
+area = 0.5 * b * h
+print("Area of Triangle =", area)
+
+# 5. Implement python script program check to given number is Armstrong or not ?
+num = int(input())
+s = 0
+n = num
+while n > 0:
+    d = n % 10
+    s += d ** len(str(num))
+    n //= 10
+if s == num:
+    print("Armstrong number")
+else:
+    print("Not Armstrong number")
