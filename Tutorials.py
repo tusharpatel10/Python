@@ -1306,3 +1306,39 @@ if s == num:
     print("Armstrong number")
 else:
     print("Not Armstrong number")
+
+
+# 21-08-2025 Paper
+# 1. Write a Python program to iterate through a tuple using loop.
+fruits = ("apple", "banana", "orange")
+for fruit in fruits:
+    print(fruit)
+
+
+# 2.
+# a) Accepte a sentence from the user as input.
+# b) Display the first 5 charecters of the sentence using slicing.
+# c) Concatenate the sentence with another predefined string.
+str1 = "Welcome to NIELIT"
+print(str1[:5])
+str2 = "O Level Exam"
+print(str1 + " " + str2)
+
+# 3. Write a python program to open the file with 'a' for appending then add a list of texts to append to the file.
+lines = ["First line\n", "Second line\n", "Third line\n"]
+f = open("myfile.txt", "a")
+f.writelines(lines)
+f.close()
+print("Texts appended successfully!")
+
+
+# 4. Write a program that takes two integer m & n (where m<n) as input and compute the sum of all even numbers between m & n (inclusive) Use the pass statement for numbers that are not even.
+m = int(input())
+n = int(input())
+total = 0
+for i in range(m, n + 1):
+    if i % 2 == 0:
+        total += i
+    else:
+        pass
+print(f"Sum of even numbers between {m} and {n} is : {total}")
