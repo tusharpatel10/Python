@@ -1236,10 +1236,14 @@ print("Reversed list: ", list[::-1])
 # 6*7 = 6+6+6+6+6+6+6
 a = int(input())
 b = int(input())
-c = a * b
-print(f"{a}*{b} = {a}", end="")
-for i in range(1, b):
-    print(f" + {a}", end="")
+c = 0
+print(f"{a}*{b} = ", end="")
+for i in range(1):
+    c = c + a
+    print(a, end="")
+    for j in range(1, b):
+        c = c + a
+        print(f" + {a}", end="")
 print(f" = {c}")
 
 
