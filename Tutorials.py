@@ -1,3 +1,12 @@
+# Constants in Math Module
+import math
+
+print(f"Return Euler's number (e -> {math.e})")
+print(f"Return Pi number (pi -> {math.pi}")
+print(f"Rounds a number up to the nearest integer (ceil -> {math.ceil}")
+print(f"Rounds a number up to the nearest integer (ceil -> {math.floor}")
+print(f"Rounds a number up to the nearest integer (ceil -> {math.fabs}")
+
 # 1. write a python program which accepts the value of a circle from the user and compute the area of circle.
 
 #  This Import Method is Pi value.
